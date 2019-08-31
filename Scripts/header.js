@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 	var navPages = document.getElementById('pageNav').children;
 
-	navPages[0].onclick = function() {
+	navPages[navPages.length-1].onclick = function() {
 		window.location.href = "index.html";
 	};
-	navPages[1].onclick = function() {
+	navPages[navPages.length-2].onclick = function() {
 		window.location.href = "cv.html";
+	};
+	navPages[navPages.length-3].onclick = function() {
+		window.location.href = "projects.html";
 	};
 });
