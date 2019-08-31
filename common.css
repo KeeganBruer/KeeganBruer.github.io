@@ -1,0 +1,27 @@
+body {
+	border: 0px;
+	margin: 0px;
+}
+img {
+	width: inherit;
+	height: inherit;
+}
+.section {
+	width: 100%;
+	display: flex;
+}
+
+.fullImage {
+	width: 100%;
+	height: auto;
+}
+.section .multiStrip {
+	width: 400px; 
+	height: 300px; 
+	margin: 30px; 
+	margin-left: 10px; 
+	margin-right: 10px;
+	border: 2px solid black;
+	border-radius: 4px;
+	box-shadow: 0px 10px 10px;
+}
