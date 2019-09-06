@@ -7,4 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	navPages[1].onclick = function() {
 		window.location.href = "https://github.com/KeeganBruer/Sheets";
 	};
+	navPages[2].onclick = function() {
+		window.location.href = "https://github.com/KeeganBruer/javadoc-generator";
+	};
 });
