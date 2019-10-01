@@ -32,8 +32,11 @@ permalink: /mp/
 			}
 			
 			window.onload = function() {
+				console.log("aaah");
 				isSiteOnline("http://104.145.75.55:3000/",function(found){
-				    if(found) {
+				    console.log(found);
+					if(found) {
+					    console.log("Online");
 					window.location.href = "http://104.145.75.55:3000/";
 				    }
 				    else {
