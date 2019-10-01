@@ -7,41 +7,14 @@ permalink: /mp/
 		<title>Keegan Bruer</title>
 		<link rel="stylesheet" href="../Style Sheets/header.css">
 		<link rel="stylesheet" href="../Style Sheets/common.css">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			
-			function isSiteOnline(url,callback) {
-			    // try to load favicon
-			    var timer = setTimeout(function(){
-				// timeout after 5 seconds
-				callback(false);
-			    },5000)
-
-			    var img = document.createElement("img");
-			    img.onload = function() {
-				clearTimeout(timer);
-				callback(true);
-			    }
-
-			    img.onerror = function() {
-				clearTimeout(timer);
-				callback(false);
-			    }
-
-			    img.src = url+"/favicon.ico";
-			}
-			
 			window.onload = function() {
-				console.log("aaah");
-				isSiteOnline("http://104.145.75.55:3000/",function(found){
-				    console.log(found);
-					if(found) {
-					    console.log("Online");
-					window.location.href = "http://104.145.75.55:3000/";
-				    }
-				    else {
-					// site is offline (or favicon not found, or server is too slow)
-				    }
+				$.get("http://104.145.75.55:3000/").done(function() {
+					window.location.href = "http://104.145.75.55:3000/";	
+				}).fail(function() {
+					alert("Project Not Available");
 				});
 			}
 		</script>
