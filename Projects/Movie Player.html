@@ -7,10 +7,15 @@ permalink: /mp/
 		<title>Keegan Bruer</title>
 		<link rel="stylesheet" href="../Style Sheets/header.css">
 		<link rel="stylesheet" href="../Style Sheets/common.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script type="text/javascript">
 			window.onload = function() {
-				// similar behavior as clicking on a link
-				window.location.href = "http://104.145.75.55:3000/";
+				$.get("http://104.145.75.55:3000/").done(function() {
+					window.location.href = "http://104.145.75.55:3000/";	
+				}).fail(function() {
+					alert("Project Not Available");
+				});
+				
 			}
 		</script>
 	</head>
