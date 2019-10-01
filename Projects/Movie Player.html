@@ -9,24 +9,8 @@ permalink: /mp/
 		<link rel="stylesheet" href="../Style Sheets/common.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script type="text/javascript">
-			
 			window.onload = function() {
-				var request;
-				if(window.XMLHttpRequest)
-				    request = new XMLHttpRequest();
-				else
-				    request = new ActiveXObject("Microsoft.XMLHTTP");
-				request.open('GET', 'http://104.145.75.55:3000/', false);
-				request.send(); // there will be a 'pause' here until the response to come.
-				// the object request will be actually modified
-				if (request.status === 404) {
-				    alert("The page you are trying to reach is not available.");
-				}
-				$.get("http://104.145.75.55:3000/").done(function() {
-					window.location.href = "http://104.145.75.55:3000/";	
-				}).fail(function() {
-					alert("Project Not Available");
-				});
+				window.location.href = "http://104.145.75.55:3000/";	
 			}
 		</script>
 	</head>
