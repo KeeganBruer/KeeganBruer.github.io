@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		window.location.href = "index.html";
 	};
 	navPages[navPages.length-2].onclick = function() {
-		window.location.href = "cv.html";
+		window.location.href = "cv";
 	};
 	navPages[navPages.length-3].onclick = function() {
-		window.location.href = "projects.html";
+		window.location.href = "projects";
 	};
 });
