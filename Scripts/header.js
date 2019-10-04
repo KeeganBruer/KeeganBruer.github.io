@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	var navPages = document.getElementById('pageNav').children;
 
 	navPages[navPages.length-1].onclick = function() {
-		window.location.href = "index.html";
+		window.location.href = "index";
 	};
 	navPages[navPages.length-2].onclick = function() {
 		window.location.href = "cv";
