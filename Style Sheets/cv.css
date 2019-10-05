@@ -7,13 +7,13 @@
 	.PositionTitle {
 		padding-left: 40px; 
 		padding-right: 20px;
-		padding-top: 20px;
+		padding-top: 0px;
 	}
 
 	.PositionContent {
 		padding-left: 80px; 
 		padding-right: 40px; 
-		margin-top: -25px; 
+		margin-top: -10px; 
 		text-indent:0px;
 	}
 	
