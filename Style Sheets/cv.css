@@ -24,28 +24,48 @@
 }
 @media only screen and (max-width: 900px) {
 	.SectionTitle {
-		padding-left: 20px; 
-		padding-right: 20px;
+
 	}
 
 	.PositionTitle {
 		padding-left: 60px; 
-		padding-right: 10px;
-		padding-top: 0px;
-		margin-top: -50px;
+		margin-top: 40px;
 	}
 
 	.PositionContent {
-		padding-left: 80px; 
-		padding-right: 40px; 
-		margin-top: -10px; 
-		text-indent:0px;
+		padding-left: 100px; 
 	}
-	
+
 	.PositionDate {
-		text-align: left;
+		text-align: left; 
 		margin-top: -60px; 
-		padding-left: 40px;
-		padding-bottom: 30px
+		padding-left: 40px;	
+		padding-bottom: 30px;
+	}
+	.PositionSubTitle {
+		font-size: 13px;
+	}
+}
+@media only screen and (max-width: 505px) {
+	.SectionTitle {
+		
+	}
+
+	.PositionTitle {
+		
+	}
+
+	.PositionContent {
+		
+	}
+
+	.PositionDate {
+		font-size:14px;
+		margin-top: -50px; 
+	}
+	.PositionSubTitle {
+		margin-left: -90px;
+		position: relative;
+		top: 13px;
 	}
 }
