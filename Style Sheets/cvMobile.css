@@ -1,0 +1,33 @@
+
+.SectionTitle {
+}
+
+.PositionTitle {
+	
+}
+
+.PositionContent {
+	
+}
+
+.PositionDate {
+		
+}
+@media only screen and (max-width: 900px) {
+	.SectionTitle {
+
+	}
+
+	.PositionTitle {
+		
+	}
+
+	.PositionContent {
+	}
+
+	.PositionDate {
+		
+	}
+	.PositionSubTitle {
+	}
+}
