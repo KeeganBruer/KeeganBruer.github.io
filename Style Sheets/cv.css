@@ -31,7 +31,7 @@
 	.PositionTitle {
 		padding-left: 40px; 
 		padding-right: 10px;
-		padding-top: 30px;
+		padding-top: 0px;
 	}
 
 	.PositionContent {
@@ -43,7 +43,7 @@
 	
 	.PositionDate {
 		text-align: left;
-		margin-top: -35px; 
+		margin-top: 0px; 
 		padding-right: 20px;	
 	}
 }
