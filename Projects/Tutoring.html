@@ -15,7 +15,7 @@ permalink: /tutor/
 				var src = "https://docs.google.com/forms/d/e/1FAIpQLSdlhJApTDnMv8aPoglowX6_2vcl2GoNDiaUUpSCG6XlEHYE8A/viewform?embedded=true";
 				src += "&entry.372252838=Keegan%20Bruer";
 				var date = new Date();
-				src += "&entry.1280230343="+date.getFullYear()+"-"+ date.getMonth()+"-"+date.getDate();
+				src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+date.getDate();
 				form.src = src;
 			}	
 		</script>
