@@ -21,11 +21,9 @@ img {
 }
 .section .multiStrip {
 	background-color: white;
-	width: 35%; 
+	width: 50%; 
 	height: 300px; 
 	margin: 50px; 
-	margin-left: 5%; 
-	margin-right: 5%;
 	border: 0px solid black;
 	border-radius: 4px;
 	box-shadow: 0px 10px 20px;
