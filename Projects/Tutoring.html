@@ -35,7 +35,7 @@ permalink: /tutor/
 	<body style="margin: 0px; overflow: hidden;">
 		<div id="alert" style="display: none; position: absolute; width: 30%; height: 100px; background-color: red; left: 35%;">
 			<h3>Page is about to refresh. Press button to cancel</h3>
-			<input id="refreshButton" type="button" doRefresh="true" onClick="function() {document.getElementById("refreshButton").style.doRefresh = false;}"></input>
+			<input id="refreshButton" type="button" doRefresh="true" onClick="(function() {document.getElementById("refreshButton").style.doRefresh = false;})()"></input>
 		</div>
 		<div style="display: flex; height: 100%;">
 			<iframe id="form" height="100%" width="40%" >
