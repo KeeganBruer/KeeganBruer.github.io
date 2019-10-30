@@ -5,11 +5,17 @@ permalink: /tutor/
 <html>
 	<head>
 		<title>Keegan Bruer</title>
-		<META HTTP-EQUIV="refresh" CONTENT="120">
 		<link rel="stylesheet" href="../Style Sheets/header.css">
 		<link rel="stylesheet" href="../Style Sheets/common.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script>
+			var reloadPage = function(){ 
+				var alertBox = document.getElementById("alert");
+				alertBox.style.cssText("display: inline-block;")
+				setTimeout(function() {
+					location.reload();
+				}, 3000);
+			}
 			window.onload = function() {
 				var form = document.getElementById("form");
 				var src = "https://docs.google.com/forms/d/e/1FAIpQLSdlhJApTDnMv8aPoglowX6_2vcl2GoNDiaUUpSCG6XlEHYE8A/viewform?embedded=true";
@@ -17,10 +23,13 @@ permalink: /tutor/
 				var date = new Date();
 				src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+date.getDate();
 				form.src = src;
+				setTimeout(reloadPage, 300000);
 			}	
 		</script>
 	</head>
 	<body style="margin: 0px; overflow: hidden;">
+		<div id="alert" style="display: none; position: absolute; ">
+		</div>
 		<div style="display: flex; height: 100%;">
 			<iframe id="form" height="100%" width="40%" >
 			</iframe>
