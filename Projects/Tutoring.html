@@ -17,6 +17,7 @@ permalink: /tutor/
 				setTimeout(function() {
 					console.log("Timed out")
 					var inputButton = document.getElementById("refreshButton");
+					console.log(inputButton.getAttribute("doRefresh"));
 					if (inputButton.getAttribute("doRefresh") == true) {
 						location.reload();	
 					} else {
