@@ -14,7 +14,7 @@ permalink: /tutor/
 				alertBox.style.cssText = alertBox.style.cssText + "display: inline-block;";
 				setTimeout(function() {
 					var inputButton = document.getElementById("refreshButton");
-					if (inputButton.style.doRefresh == true) {
+					if (inputButton.getAttribute("doRefresh") == true) {
 						location.reload();	
 					} else {
 						setTimeout(reloadPage, 1000);
@@ -31,7 +31,7 @@ permalink: /tutor/
 				setTimeout(reloadPage, 1000);
 			}	
 			var onRefreshClick = function() {
-				document.getElementById("refreshButton").style.doRefresh = false;
+				document.getElementById("refreshButton").setAttribute("doRefresh", false);
 			}
 		</script>
 	</head>
