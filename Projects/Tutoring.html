@@ -9,17 +9,20 @@ permalink: /tutor/
 		<link rel="stylesheet" href="../Style Sheets/common.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script>
+			var pageTimeout = 1000;
+			var alertTimeout = 3000;
 			var reloadPage = function(){ 
 				var alertBox = document.getElementById("alert");
-				alertBox.style.cssText = alertBox.style.cssText + "display: inline-block;";
+				alertBox.style.display= "inline-block";
 				setTimeout(function() {
+					console.log("Timed out")
 					var inputButton = document.getElementById("refreshButton");
 					if (inputButton.getAttribute("doRefresh") == true) {
 						location.reload();	
 					} else {
-						setTimeout(reloadPage, 1000);
+						setTimeout(reloadPage, pageTimeout);
 					}
-				}, 3000);
+				}, alertTimeout);
 			}
 			window.onload = function() {
 				var form = document.getElementById("form");
@@ -28,10 +31,11 @@ permalink: /tutor/
 				var date = new Date();
 				src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+date.getDate();
 				form.src = src;
-				setTimeout(reloadPage, 1000);
+				setTimeout(reloadPage, pageTimeout);
 			}	
 			var onRefreshClick = function() {
 				document.getElementById("refreshButton").setAttribute("doRefresh", false);
+				alertBox.style.display= "none";
 			}
 		</script>
 	</head>
