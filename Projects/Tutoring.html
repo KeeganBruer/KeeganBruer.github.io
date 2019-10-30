@@ -21,6 +21,7 @@ permalink: /tutor/
 					if (inputButton.getAttribute("doRefresh") == "true") {
 						location.reload();	
 					} else {
+						document.getElementById("refreshButton").setAttribute("doRefresh", true);
 						setTimeout(reloadPage, pageTimeout);
 					}
 				}, alertTimeout);
