@@ -11,27 +11,28 @@ permalink: /tutor/
 		<script>
 			var pageTimeoutM = .5;
 			var alertTimeoutS = 30;
-			let i = 0;
+			let i = 30;
 			let incrementI = function() {
 				i += 1;
 			}
 			var reloadPage = function(){ 
 				var alertBox = document.getElementById("alert");
 				var counter = document.getElementById("counter");
+				counter.innerHTML = ""+i;
 				alertBox.style.display= "inline-block";
 				setInterval(function() {
 					counter.innerHTML = ""+i;
-					if (i > 30) {
+					if (i < 1) {
 						var inputButton = document.getElementById("refreshButton");
 						console.log(inputButton.getAttribute("doRefresh"));
 						if (inputButton.getAttribute("doRefresh") == "true") {
 							location.reload();	
 						} else {
 							document.getElementById("refreshButton").setAttribute("doRefresh", true);
-							i = 0;
+							i = 30;
 						}
 					}
-					i = i + 1;
+					i = i - 1;
 				}, 1000);
 			}
 			window.onload = function() {
