@@ -9,22 +9,24 @@ permalink: /tutor/
 		<link rel="stylesheet" href="../Style Sheets/common.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script>
-			var pageTimeout = 180000;
-			var alertTimeout = 120000;
+			var pageTimeoutM = 3;
+			var alertTimeoutS = 30;
 			var reloadPage = function(){ 
 				var alertBox = document.getElementById("alert");
 				alertBox.style.display= "inline-block";
-				setTimeout(function() {
-					console.log("Timed out")
-					var inputButton = document.getElementById("refreshButton");
-					console.log(inputButton.getAttribute("doRefresh"));
-					if (inputButton.getAttribute("doRefresh") == "true") {
-						location.reload();	
-					} else {
-						document.getElementById("refreshButton").setAttribute("doRefresh", true);
-						setTimeout(reloadPage, pageTimeout);
-					}
-				}, alertTimeout);
+				let i = 0;
+				while (i < 30) {
+					document.getElementById("counter").innerHTML = ""+i;
+					setTimeout(function(c) {c+=1}, 1000, i);
+				}
+				var inputButton = document.getElementById("refreshButton");
+				console.log(inputButton.getAttribute("doRefresh"));
+				if (inputButton.getAttribute("doRefresh") == "true") {
+					location.reload();	
+				} else {
+					document.getElementById("refreshButton").setAttribute("doRefresh", true);
+					setTimeout(reloadPage, pageTimeoutM * 60 * 1000);
+				}
 			}
 			window.onload = function() {
 				var form = document.getElementById("form");
@@ -33,7 +35,7 @@ permalink: /tutor/
 				var date = new Date();
 				src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+date.getDate();
 				form.src = src;
-				setTimeout(reloadPage, pageTimeout);
+				setTimeout(reloadPage, pageTimeoutM * 60 * 1000);
 			}	
 			var onRefreshClick = function() {
 				document.getElementById("refreshButton").setAttribute("doRefresh", false);
@@ -45,6 +47,7 @@ permalink: /tutor/
 		<div id="alert" style="display: none; position: absolute; width: 40%; height: 100px; background-color: red; left: 30%;">
 			<center>
 			<h3>Page is about to refresh. Press button to cancel</h3>
+			<h3 id="counter"></h3>
 			<input id="refreshButton" type="button" doRefresh="true" value="Cancel" onClick="onRefreshClick()"></input>
 			</center>
 		</div>
