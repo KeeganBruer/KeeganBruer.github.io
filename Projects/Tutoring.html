@@ -22,10 +22,11 @@ permalink: /tutor/
 			var alertTimeoutS = 30;
 			var reloadPage = function(){ 
 				var alertBox = document.getElementById("alert");
+				var counter = document.getElementById("counter");
 				alertBox.style.display= "inline-block";
 				let i = 0;
 				while (i < 30) {
-					document.getElementById("counter").innerHTML = ""+i;
+					counter.innerHTML = ""+i;
 					console.log(i);
 					sleep(1000);
 					i++;
