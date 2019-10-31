@@ -12,6 +12,9 @@ permalink: /tutor/
 			var pageTimeoutM = .5;
 			var alertTimeoutS = 30;
 			let i = 0;
+			let incrementI = function() {
+				i += 1;
+			}
 			var reloadPage = function(){ 
 				var alertBox = document.getElementById("alert");
 				var counter = document.getElementById("counter");
@@ -19,9 +22,7 @@ permalink: /tutor/
 				while (i < 30) {
 					counter.innerHTML = ""+i;
 					console.log(i);
-					setTimeout(function() {
-						i += 1;
-					}, 1000)
+					setTimeout(incrementI, 1000);
 				}
 				var inputButton = document.getElementById("refreshButton");
 				console.log(inputButton.getAttribute("doRefresh"));
