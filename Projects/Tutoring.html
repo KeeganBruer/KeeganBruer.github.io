@@ -19,18 +19,19 @@ permalink: /tutor/
 				var alertBox = document.getElementById("alert");
 				var counter = document.getElementById("counter");
 				alertBox.style.display= "inline-block";
-				while (i < 30) {
+				setInterval(function() {
 					counter.innerHTML = ""+i;
-					setTimeout(incrementI, 1000);
-				}
-				var inputButton = document.getElementById("refreshButton");
-				console.log(inputButton.getAttribute("doRefresh"));
-				if (inputButton.getAttribute("doRefresh") == "true") {
-					location.reload();	
-				} else {
-					document.getElementById("refreshButton").setAttribute("doRefresh", true);
-					setTimeout(reloadPage, pageTimeoutM * 60 * 1000);
-				}
+					if (i > 30) {
+						var inputButton = document.getElementById("refreshButton");
+						console.log(inputButton.getAttribute("doRefresh"));
+						if (inputButton.getAttribute("doRefresh") == "true") {
+							location.reload();	
+						} else {
+							document.getElementById("refreshButton").setAttribute("doRefresh", true);
+							i = 0;
+						}
+					}
+				}, 1000);
 			}
 			window.onload = function() {
 				var form = document.getElementById("form");
