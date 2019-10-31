@@ -9,6 +9,15 @@ permalink: /tutor/
 		<link rel="stylesheet" href="../Style Sheets/common.css">
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script>
+			
+			function sleep(milliseconds) {
+			  var start = new Date().getTime();
+			  for (var i = 0; i < 1e7; i++) {
+			    if ((new Date().getTime() - start) > milliseconds){
+			      break;
+			    }
+			  }
+			}
 			var pageTimeoutM = .5;
 			var alertTimeoutS = 30;
 			var reloadPage = function(){ 
@@ -17,7 +26,9 @@ permalink: /tutor/
 				let i = 0;
 				while (i < 30) {
 					document.getElementById("counter").innerHTML = ""+i;
-					setTimeout(function(c) {c+=1}, 1000, i);
+					console.log(i);
+					sleep(1000);
+					i++;
 				}
 				var inputButton = document.getElementById("refreshButton");
 				console.log(inputButton.getAttribute("doRefresh"));
