@@ -45,6 +45,10 @@ permalink: /tutor/
 				document.getElementById("refreshButton").setAttribute("doRefresh", false);
 				document.getElementById("alert").style.display= "none";
 			}
+			var onComment = function() {
+				console.log(document.getElementById("comment").value);
+				document.getElementById("comment").value = "";
+			}
 		</script>
 	</head>
 	<body style="margin: 0px; overflow: hidden;">
@@ -59,9 +63,9 @@ permalink: /tutor/
 			<center>
 			<h3>Leave a Comment</h3>
 			<p style="font-size: 10px; margin-top: -10px;">Cause I'm Bored'</p>
-			<textarea style="width: 90%; height: 70%"></textarea>
+			<textarea id="comment" style="width: 90%; height: 70%"></textarea>
 			<br>
-			<input type="submit" value="Comment!" style="margin-top: 10px;"></input>
+			<input type="submit" value="Comment!" style="margin-top: 10px;" onClick="onComment()"></input>
 			</center>
 		</div>
 		<div style="display: flex; height: 100%;">
