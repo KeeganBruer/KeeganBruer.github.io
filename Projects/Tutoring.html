@@ -47,6 +47,18 @@ permalink: /tutor/
 			}
 			var onComment = function() {
 				console.log(document.getElementById("comment").value);
+				
+				let answer = encodeURIComponent(document.getElementById("comment").value);
+
+				var formId = '1FAIpQLSe9mH0k9sMBiS34vnJ2jrwju3nHnRbrEFUyYl4Ce94LMZSg9Q'
+				var queryString = '&entry.1407520925=' + answer + '&submit=SUBMIT'
+
+				var urlLink = 'https://docs.google.com/forms/d/e/' + formId + "/formResponse?embedded=true" +queryString
+				console.log(urlLink);
+				var wnd = window.open(urlLink);
+				setTimeout(function() {
+				  wnd.close();
+				}, 10);
 				document.getElementById("comment").value = "";
 			}
 		</script>
