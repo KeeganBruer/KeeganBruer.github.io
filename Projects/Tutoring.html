@@ -56,6 +56,7 @@ permalink: /tutor/
 				var urlLink = 'https://docs.google.com/forms/d/e/' + formId + "/formResponse?embedded=true" +queryString
 				console.log(urlLink);
 				var wnd = window.open(urlLink);
+				setTimeout(function() { window.focus() },1);
 				setTimeout(function() {
 				  wnd.close();
 				}, 10);
