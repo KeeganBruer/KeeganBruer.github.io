@@ -55,11 +55,11 @@ permalink: /tutor/
 
 				var urlLink = 'https://docs.google.com/forms/d/e/' + formId + "/formResponse?embedded=true" +queryString
 				console.log(urlLink);
-				var wnd = window.open(urlLink);
-				setTimeout(function() { window.focus() },1);
+				var wnd = window.open(urlLink, "", 'width=,height=,resizable=no,top=0,left=10000');
+				wnd.blur();
 				setTimeout(function() {
 				  wnd.close();
-				}, 10);
+				}, 500);
 				document.getElementById("comment").value = "";
 			}
 		</script>
