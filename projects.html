@@ -26,6 +26,34 @@
 					element.style.height = "20px";
 				}
 			}
+			
+			let expandAll = function() {
+				let children = document.getElementsByClassName("projectDiv");
+				for (let i = 0; i < children.length; i++) {
+					let element = children[i];
+					element.style.height = "auto";
+					element.children[0].style.flexDirection = "column";
+					element.children[0].children[1].style.display ="none";
+					element.children[0].children[2].style.display ="inline-block";
+					element.children[0].children[3].style.display ="flex";
+					element.children[1].children[0].style.marginRight ="0px";
+					element.children[1].children[1].style.display ="none";
+				}
+			}
+			
+			let collapseAll = function() {
+				let children = document.getElementsByClassName("projectDiv");
+				for (let i = 0; i < children.length; i++) {
+					let element = children[i];
+					element.children[0].style.flexDirection = "row";
+					element.children[0].children[1].style.display ="inline-block";
+					element.children[0].children[2].style.display ="none";
+					element.children[0].children[3].style.display ="none";
+					element.children[1].children[0].style.marginRight ="5px";
+					element.children[1].children[1].style.display ="inline-block";
+					element.style.height = "20px";
+				}
+			}
 		</script>
 	</head>
 	<body>
@@ -42,6 +70,12 @@
 			<div class="singleStrip">
 				<h2 style="text-align: center;">Projects</h2>
 				<h4 style="text-align: center;">Click on a project to see its details</h4>
+				<div style="display: flex; flex-direction: row; margin: 5px 4%; margin-top: -30px">
+					<input type="button" value="Expand All" style="1" onClick="expandAll();"></input>
+					<div style="flex: 6"></div>
+					<input type="button" value="Collapse All" style="1" onclick="collapseAll();"></input>
+				
+				</div>
 				<!--Discord Web-face-->
 				<div class="projectDiv" onclick="expandProject(this);" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
 					<div style="display: flex; flex-direction: row; flex: 5;">
