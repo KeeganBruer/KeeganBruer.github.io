@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
 	var navPages = document.getElementsByClassName('projectLink');
-	
-	navPages[0].onclick = function() {
-		window.location.href = "https://www.npmjs.com/package/discord-webface";
-	};
-	navPages[1].onclick = function() {
-		window.location.href = "https://github.com/KeeganBruer/javadoc-generator";
-	};
-	navPages[2].onclick = function() {
-		window.location.href = "https://github.com/KeeganBruer/Sheets";
-	};
+	let navLinks = ["https://www.npmjs.com/package/discord-webface",
+					"https://github.com/KeeganBruer/javadoc-generator",
+					"https://github.com/KeeganBruer/Sheets",
+					"https://github.com/KeeganBruer/FRCSignIn"];
+	for (let i = 0; i < navPages.length; i++) {
+		let index = Math.floor(i/2);
+		navPages[i].onclick = function() {
+			window.location.href = navLinks[index];
+		};
+	}
 });

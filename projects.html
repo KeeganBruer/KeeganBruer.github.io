@@ -6,6 +6,27 @@
 		<link rel="stylesheet" href="Style Sheets/projects.css">
 		<script type="text/javascript" src="Scripts/header.js"></script>
 		<script type="text/javascript" src="Scripts/projects.js"></script>
+		<script>
+			let expandProject = function(element) {
+				if (element.children[0].style.flexDirection == "row") {
+					element.style.height = "auto";
+					element.children[0].style.flexDirection = "column";
+					element.children[0].children[1].style.display ="none";
+					element.children[0].children[2].style.display ="inline-block";
+					element.children[0].children[3].style.display ="flex";
+					element.children[1].children[0].style.marginRight ="0px";
+					element.children[1].children[1].style.display ="none";
+				} else {
+					element.children[0].style.flexDirection = "row";
+					element.children[0].children[1].style.display ="inline-block";
+					element.children[0].children[2].style.display ="none";
+					element.children[0].children[3].style.display ="none";
+					element.children[1].children[0].style.marginRight ="5px";
+					element.children[1].children[1].style.display ="inline-block";
+					element.style.height = "20px";
+				}
+			}
+		</script>
 	</head>
 	<body>
 		<div id="header">
@@ -20,23 +41,91 @@
 		<div class="section" style="justify-content: center;">
 			<div class="singleStrip">
 				<h2 style="text-align: center;">Projects</h2>
-				<div class="projectDiv" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
-					<h3 style="margin-top: 0px;">Discord Web-face</h3>
-					<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">A simple web (inter)face for managing a discord bot.</p>
-					<img style="margin-left: auto; margin-right: 10px; height: 20px; width: auto;" src="https://img.shields.io/npm/dy/discord-webface.svg">
-					<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold;"/>
+				<h4 style="text-align: center;">Click on a project to see its details</h4>
+				<!--Discord Web-face-->
+				<div class="projectDiv" onclick="expandProject(this);" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
+					<div style="display: flex; flex-direction: row; flex: 5;">
+	<!--Title-->		<h3 style="margin-top: 0px;">Discord Web-face</h3>
+	<!--Descrip-->		<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">A simple web (inter)face for managing a discord bot.</p>
+						<ul style="display: none; margin-left: 0px; margin-top: -10px; font-size: 15px;">
+							<li>Introduction to server side programming and management using NodeJS.</li>
+							<li>Created a website interface for controlling a discord bot.</li>
+							<li>Knowledge Leveraged: NodeJS, Express, and NPM Package Managing</li>
+						</ul>
+						<div style="display: none; flex-direction: row; width: 100%;">
+							<div style="flex:5;"></div>
+							<input class="projectLink" type="button" value="Go To Project Page" style="margin-left: auto; margin-right: 0px; font-weight: Bold; height: 30px; flex:2;"/>
+							<div style="flex:3;"></div>
+						</div>
+					</div>
+					<div style="flex: 1; display: flex; flex-direction: row;">
+						<img style="margin-left: auto; margin-right: 5px; height: 20px; width: auto;" src="https://img.shields.io/npm/dy/discord-webface.svg">
+						<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold; height: 20px;"/>
+					</div>
 				</div>
-				<div class="projectDiv" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
-					<h3 style="margin-top: 0px;">Javadoc Generator</h3>
-					<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">A VSCode extention to wrap the javadoc.jar for generating javadocs for VSCode projects.</p>
-					<img style="margin-left: auto; margin-right: 10px; height: 20px; width: auto;" src="https://vsmarketplacebadge.apphb.com/installs/KeeganBruer.javadoc-generator.svg">
-					<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold; "/>
+				<!--Javadoc Generator-->
+				<div class="projectDiv" onclick="expandProject(this);" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
+					<div style="display: flex; flex-direction: row; flex: 5;">
+	<!--Title-->		<h3 style="margin-top: 0px;">Javadoc Generator</h3>
+	<!--Descrip-->		<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">A VSCode extention to wrap the javadoc.jar for generating javadocs for VSCode projects.</p>
+						<ul style="display: none; margin-left: 0px; margin-top: -10px; font-size: 15px;">
+							<li>Developed extension to VSCode that wrapped Java’s Javadoc compiler.</li>
+							<li>Knowledge Leveraged: Javascript, VSCode Extension Management</li>
+						</ul>
+						<div style="display: none; flex-direction: row; width: 100%;">
+							<div style="flex:5;"></div>
+							<input class="projectLink" type="button" value="Go To Project Page" style="margin-left: auto; margin-right: 0px; font-weight: Bold; height: 30px; flex:2;"/>
+							<div style="flex:3;"></div>
+						</div>
+					</div>
+					<div style="flex: 1; display: flex; flex-direction: row;">
+						<img style="margin-left: auto; margin-right: 5px; height: 20px; width: auto;" src="https://vsmarketplacebadge.apphb.com/installs/KeeganBruer.javadoc-generator.svg">
+						<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold; height: 20px;"/>
+					</div>
 				</div>
-				<div class="projectDiv" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
-					<h3 style="margin-top: 0px;">Java Spreadsheet Reader</h3>
-					<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">A util java library for reading and editing spreadsheets.</p>
-					<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold; margin-left: auto; "/>
+				<!--Java Spreadsheet Reader-->
+				<div class="projectDiv" onclick="expandProject(this);" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
+					<div style="display: flex; flex-direction: row; flex: 5;">
+	<!--Title-->		<h3 style="margin-top: 0px;">Java Spreadsheet Reader</h3>
+	<!--Descrip-->		<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">A util java library for reading and editing spreadsheets.</p>
+						<ul style="display: none; margin-left: 0px; margin-top: -10px; font-size: 15px;">
+							<li>Introduction to server side programming and management using NodeJS.</li>
+							<li>Created a website interface for controlling a discord bot.</li>
+							<li>Knowledge Leveraged: NodeJS, Express, and NPM Package Managing</li>
+						</ul>
+						<div style="display: none; flex-direction: row; width: 100%;">
+							<div style="flex:5;"></div>
+							<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold; height: 30px; flex:2;"/>
+							<div style="flex:3;"></div>
+						</div>
+					</div>
+					<div style="flex: 1; display: flex; flex-direction: row;">
+						<div></div>
+						<input class="projectLink" type="button" value="Go To Project Page" style="margin-left: auto; margin-right: 0px; font-weight: Bold; height: 20px;"/>
+					</div>
 				</div>
+				<!--Sign-in System-->
+				<div class="projectDiv" onclick="expandProject(this);" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 20px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
+					<div style="display: flex; flex-direction: row; flex: 5;">
+	<!--Title-->		<h3 style="margin-top: 0px;">Sign-in System</h3>
+	<!--Descrip-->		<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">A util java library for reading and editing spreadsheets.</p>
+						<ul style="display: none; margin-left: 0px; margin-top: -10px; font-size: 15px;">
+							<li>Developed software with a GUI interface that logged the hours of students to a spreadsheet.</li>
+							<li>Utilized Hash tables to allow students to quickly access their information from using their id.</li>
+							<li>Knowledge Leveraged: Java Swing GUI, Hash Tables, Database Management,</li>
+						</ul>
+						<div style="display: none; flex-direction: row; width: 100%;">
+							<div style="flex:5;"></div>
+							<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold; height: 30px; flex:2;"/>
+							<div style="flex:3;"></div>
+						</div>
+					</div>
+					<div style="flex: 1; display: flex; flex-direction: row;">
+						<div></div>
+						<input class="projectLink" type="button" value="Go To Project Page" style="margin-left: auto; margin-right: 0px; font-weight: Bold; height: 20px;"/>
+					</div>
+				</div>
+			
 			</div>
 		</div>
 		<div class="section" style="height: 50px;"></div>
