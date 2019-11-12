@@ -9,6 +9,7 @@
 		<script>
 			let expandProject = function(element) {
 				if (element.children[0].style.flexDirection == "row") {
+					element.temp = element.style.height;
 					element.style.height = "auto";
 					element.children[0].style.flexDirection = "column";
 					element.children[0].children[1].style.display ="none";
@@ -23,7 +24,7 @@
 					element.children[0].children[3].style.display ="none";
 					element.children[1].children[0].style.marginRight ="5px";
 					element.children[1].children[1].style.display ="inline-block";
-					element.style.height = "20px";
+					element.style.height = element.temp;
 				}
 			}
 			
@@ -31,6 +32,7 @@
 				let children = document.getElementsByClassName("projectDiv");
 				for (let i = 0; i < children.length; i++) {
 					let element = children[i];
+					element.temp = element.style.height;
 					element.style.height = "auto";
 					element.children[0].style.flexDirection = "column";
 					element.children[0].children[1].style.display ="none";
@@ -51,7 +53,7 @@
 					element.children[0].children[3].style.display ="none";
 					element.children[1].children[0].style.marginRight ="5px";
 					element.children[1].children[1].style.display ="inline-block";
-					element.style.height = "20px";
+					element.style.height = element.temp;
 				}
 			}
 		</script>
@@ -116,6 +118,27 @@
 					<div style="flex: 1; display: flex; flex-direction: row;">
 						<img style="margin-left: auto; margin-right: 5px; height: 20px; width: auto;" src="https://vsmarketplacebadge.apphb.com/installs/KeeganBruer.javadoc-generator.svg">
 						<input class="projectLink" type="button" value="Go To Project Page" style="font-weight: Bold; height: 20px;"/>
+					</div>
+				</div>
+				
+				<!--Computer Aesthetics Model Using Neural Networks-->
+				<div class="projectDiv" onclick="expandProject(this);" style="margin-bottom: 20px; padding: 10px; width: 90%; height: 40px; border: 2px solid black; margin-left: auto; margin-right: auto; display: flex; flex-direction: row;">
+					<div style="display: flex; flex-direction: row; flex: 5;">
+	<!--Title-->		<h3 style="margin-top: 0px; width: 300px;">Computer Aesthetics Model Using Neural Networks</h3>
+	<!--Descrip-->		<p style="margin-left: 20px; margin-top: 5px; font-size: 12px;">Programmed Neural Networks in Python using Google’s Tensorflow to model how individual features of a face correlate to attraction.</p>
+						<ul style="display: none; margin-left: 0px; margin-top: -10px; font-size: 15px;">
+							<li></li>
+							<li>Knowledge Leveraged:</li>
+						</ul>
+						<div style="display: none; flex-direction: row; width: 100%;">
+							<div style="flex:5;"></div>
+							<input class="projectLink" type="button" value="Go To Project Page" style="margin-left: auto; margin-right: 0px; font-weight: Bold; height: 30px; flex:2;"/>
+							<div style="flex:3;"></div>
+						</div>
+					</div>
+					<div style="flex: 1; display: flex; flex-direction: row;">
+						<div></div>
+						<input class="projectLink" type="button" value="Go To Project Page" style="margin-left: auto; margin-right: 0px; font-weight: Bold; height: 20px;"/>
 					</div>
 				</div>
 				
