@@ -14,7 +14,7 @@ var keepPageRefreshed = function(){
 				alertTimeoutS = 120;
 			}
 		} else if (alertTimeoutS == 30) {
-			alertBox.style.display= "inline-block";	
+			alertBox.style.display= "flex";	
 		}
 		alertTimeoutS -= 1;
 	}, 1000);
