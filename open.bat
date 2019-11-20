@@ -1,1 +1,0 @@
-start ../notepad++/notepad++.exe %*
