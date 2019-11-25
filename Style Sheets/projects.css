@@ -1,3 +1,38 @@
+.projectDiv {
+	margin-bottom: 20px; 
+	padding: 10px; 
+	width: 90%; 
+	border: 2px solid black; 
+	margin-left: auto; 
+	margin-right: auto; 
+	display: flex; 
+	flex-direction: row;
+}
+.projectDiv > .projectContent {
+	display: flex; 
+	flex-direction: row;
+	flex: 5;
+}
+.projectDiv > .projectContent > h3{
+	margin-top: 0px; 
+	margin-bottom: 0px;
+}
+.projectDiv > .projectContent > p{
+	margin-left: 20px; 
+	margin-top: 5px; 
+	margin-bottom: 0px; 
+	font-size: 12px;
+}
+.projectDiv > .projectContent > ul {
+	display: none;
+	margin-left: 0px;
+	margin-top: 0px; 
+	font-size: 15px;
+}
+
+.projectButton {
+	 style="display: none; flex-direction: row; width: 100%;
+}
 .projectDiv > p {
 	display: inline-block;
 } 
