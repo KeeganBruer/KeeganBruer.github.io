@@ -24,13 +24,18 @@ permalink: /tutor/
 					<div height="100%" style="margin: 0px 10px; flex: 1; display: flex; flex-direction: column; box-shadow: 0px 0px 10px;background-color: red;">
 		    			<h1 style="margin-left: 30px; font-size: 30px">Info For Form:</h1>
 						<h1 id="date" style="margin-left: 50px; font-size: 30px">Date: 10/23/2019</h1>
-						<h1 style="margin-left: 50px; font-size: 30px">Tutor: Keegan Bruer</h1>
-						<h1 style="margin-left: 50px; font-size: 30px">Email: Kbruer@unca.edu</h1>
+						<div style="display: flex; flex-direction: row; align-items: center;">
+							<h1 style="margin-left: 50px; font-size: 30px">Current Tutor:</h1>
+							<input type="textarea" id="tutorName" style="background-color: transparent; border: 0px; font-size: 30px; height: 40px; width: 50%;"></input>
+						</div>
+						<h1 style="margin-left: 50px; font-size: 20px">Tutor Name: Keegan, Email: kbruer@unca.edu</h1>
+						<h1 style="margin-left: 50px; font-size: 20px">Tutor Name: Caleb, Email: cspradli@unca.edu</h1>
+						<h1 style="margin-left: 50px; font-size: 20px">Tutor Name: William, Email: wlawrenc@unca.edu</h1>
 					</div>
 					<div id="comments" style="margin: 0px 10px; flex: 1; box-shadow: 0px 0px 10px; display: inline-block; background-color: red;">
 						<center>
-						<h3>Leave a Comment</h3>
-						<p style="font-size: 10px; margin-top: -10px;">Cause I'm Bored'</p>
+						<h3>Leave A Contact</h3>
+						<p style="font-size: 10px; margin-top: -10px;">Have an after hours question?</p>
 						<textarea id="comment" style="width: 90%; min-height: 200px"></textarea>
 						<br>
 						<input type="submit" value="Comment!" style="margin: 10px 0px;" onClick="onComment()"></input>

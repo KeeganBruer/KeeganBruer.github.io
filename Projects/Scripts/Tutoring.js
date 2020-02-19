@@ -1,13 +1,17 @@
 let alertTimeoutS = 120;
-let tutorName = "Keegan%20Bruer";
 var keepPageRefreshed = function(){ 
 	var alertBox = document.getElementById("alert");
 	var counter = document.getElementById("counter");
 	setInterval(function() {
 		counter.innerHTML = ""+alertTimeoutS;
+		console.log(window.location.href.includes("name="));
+			console.log(window.location.href.split("name=")[1] == document.getElementById("tutorName").value.replace(" ", "%20"));
+			console.log(document.getElementById("tutorName").value.replace(" ", "%20"));
 		if (alertTimeoutS < 1) {
-			if (window.location.href.includes("name=") &&  window.location.href.split("name=")[1] == tutorName){
-				window.location.href = window.location.href.replace("?name=" + window.location.href.split("name=")[1], "") + "?name=" + tutorName;	
+			
+			
+			if (window.location.href.includes("name=") &&  window.location.href.split("name=")[1] != document.getElementById("tutorName").value.replace(" ", "%20")){
+				window.location.href = window.location.href.replace("?name=" + window.location.href.split("name=")[1], "") + "?name=" + document.getElementById("tutorName").value.replace(" ", "%20");	
 			} else {
 				console.log("here2");
 				location.reload();
@@ -21,11 +25,12 @@ var keepPageRefreshed = function(){
 	}, 1000);
 }
 window.onload = function() {
-	tutorName = window.location.href.split("name=")[1];
+	let tutorName = window.location.href.split("name=")[1];
 	console.log(tutorName);
 	if (tutorName == undefined) {
 		window.location.href = window.location.href + "?name=Keegan%20Bruer";
 	}
+	document.getElementById("tutorName").value = tutorName.replace("%20", " ");
 	var form = document.getElementById("form");
 	var src = "https://docs.google.com/forms/d/e/1FAIpQLSdlhJApTDnMv8aPoglowX6_2vcl2GoNDiaUUpSCG6XlEHYE8A/viewform?embedded=true";
 	src += "&entry.372252838=" + tutorName;
