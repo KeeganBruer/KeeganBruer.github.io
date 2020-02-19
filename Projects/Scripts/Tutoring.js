@@ -40,6 +40,17 @@ window.onload = function() {
 	console.log(src)
 	form.src = src;
 	keepPageRefreshed();
+	
+	$("#tutorName").keyup(function(event) {
+    	if (event.keyCode === 13) {
+        	if (window.location.href.includes("name=") &&  window.location.href.split("name=")[1] != document.getElementById("tutorName").value.replace(" ", "%20")){
+				window.location.href = window.location.href.replace("?name=" + window.location.href.split("name=")[1], "") + "?name=" + document.getElementById("tutorName").value.replace(" ", "%20");	
+			} else {
+				console.log("here2");
+				location.reload();
+			}
+    	}
+	});
 }	
 var onRefreshClick = function() {
 	alertTimeoutS = 120;
