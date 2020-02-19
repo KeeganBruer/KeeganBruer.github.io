@@ -16,26 +16,28 @@ permalink: /tutor/
 			<h3 id="counter"></h3>
 			<input id="refreshButton" style="width:80%; height: 30px;" type="button" doRefresh="true" value="Cancel" onClick="onRefreshClick()"></input>
 		</div>
-		<div id="comments" style="box-shadow: 0px 0px 10px; display: inline-block; position: absolute; width: 25%; background-color: red; right: 0%; top: 0%;">
-			<center>
-			<h3>Leave a Comment</h3>
-			<p style="font-size: 10px; margin-top: -10px;">Cause I'm Bored'</p>
-			<textarea id="comment" style="width: 90%; min-height: 200px"></textarea>
-			<br>
-			<input type="submit" value="Comment!" style="margin: 10px 0px;" onClick="onComment()"></input>
-			</center>
-		</div>
-		<div style="display: flex; height: 100%;">
-			<iframe id="form" height="100%" width="40%" >
+		<div style="display: flex; flex-direction: row; height: 100%;">
+			<iframe id="form" style="flex: 1;" height="100%" >
 			</iframe>
-			<div height="100%" width="60%" style="display: flex; flex-direction: column;">
-    			<div style="height: 50px"></div>
-    			<h1 style="margin-left: 30px; font-size: 30px">Info For Form:</h1>
-				<h1 id="date" style="margin-left: 50px; font-size: 30px">Date: 10/23/2019</h1>
-				<h1 style="margin-left: 50px; font-size: 30px">Tutor: Keegan Bruer</h1>
-				<h1 style="margin-left: 50px; font-size: 30px">Email: Kbruer@unca.edu</h1>
-				<h1 style="margin-left: 30px; font-size: 30px">Alternative Tutoring Hours:</h1>
-				<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=dW5jYS5lZHVfOGRydjU2OWlsNTduMjE4cW83dWlsZ3NrNGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;showTitle=0" style="margin-left: 30px; width: 60vw; height: 50vh; border:solid 1px #777" frameborder="0" scrolling="no"></iframe>
+			<div style="display: flex; flex-direction: column;">
+				<div style="flex: 1; display: flex; flex-direction: row;">
+					<div height="100%" style="margin: 0px 10px; flex: 1; display: flex; flex-direction: column; box-shadow: 0px 0px 10px;background-color: red;">
+		    			<h1 style="margin-left: 30px; font-size: 30px">Info For Form:</h1>
+						<h1 id="date" style="margin-left: 50px; font-size: 30px">Date: 10/23/2019</h1>
+						<h1 style="margin-left: 50px; font-size: 30px">Tutor: Keegan Bruer</h1>
+						<h1 style="margin-left: 50px; font-size: 30px">Email: Kbruer@unca.edu</h1>
+					</div>
+					<div id="comments" style="margin: 0px 10px; flex: 1; box-shadow: 0px 0px 10px; display: inline-block; background-color: red;">
+						<center>
+						<h3>Leave a Comment</h3>
+						<p style="font-size: 10px; margin-top: -10px;">Cause I'm Bored'</p>
+						<textarea id="comment" style="width: 90%; min-height: 200px"></textarea>
+						<br>
+						<input type="submit" value="Comment!" style="margin: 10px 0px;" onClick="onComment()"></input>
+						</center>
+					</div>
+				</div>
+				<iframe style="margin: 30px; width: 60vw; height: 50vh; border:solid 1px #777" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=dW5jYS5lZHVfOGRydjU2OWlsNTduMjE4cW83dWlsZ3NrNGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23D50000&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;showTitle=0" frameborder="0" scrolling="no"></iframe>
 			</div>
 	</body>
 </html>

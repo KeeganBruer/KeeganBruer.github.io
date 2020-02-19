@@ -1,28 +1,34 @@
 let alertTimeoutS = 120;
+let tutorName = "Keegan%20Bruer";
 var keepPageRefreshed = function(){ 
 	var alertBox = document.getElementById("alert");
 	var counter = document.getElementById("counter");
 	setInterval(function() {
 		counter.innerHTML = ""+alertTimeoutS;
 		if (alertTimeoutS < 1) {
-			var inputButton = document.getElementById("refreshButton");
-			console.log(inputButton.getAttribute("doRefresh"));
-			if (inputButton.getAttribute("doRefresh") == "true") {
-				location.reload();	
+			if (window.location.href.includes("name=") &&  window.location.href.split("name=")[1] == tutorName){
+				window.location.href = window.location.href.replace("?name=" + window.location.href.split("name=")[1], "") + "?name=" + tutorName;	
 			} else {
-				document.getElementById("refreshButton").setAttribute("doRefresh", true);
-				alertTimeoutS = 120;
+				console.log("here2");
+				location.reload();
 			}
-		} else if (alertTimeoutS == 30) {
+		} else if (alertTimeoutS < 30) {
 			alertBox.style.display= "flex";	
+		} else {
+			alertBox.style.display= "none";
 		}
 		alertTimeoutS -= 1;
 	}, 1000);
 }
 window.onload = function() {
+	tutorName = window.location.href.split("name=")[1];
+	console.log(tutorName);
+	if (tutorName == undefined) {
+		window.location.href = window.location.href + "?name=Keegan%20Bruer";
+	}
 	var form = document.getElementById("form");
 	var src = "https://docs.google.com/forms/d/e/1FAIpQLSdlhJApTDnMv8aPoglowX6_2vcl2GoNDiaUUpSCG6XlEHYE8A/viewform?embedded=true";
-	src += "&entry.372252838=Keegan%20Bruer";
+	src += "&entry.372252838=" + tutorName;
 	var date = new Date();
 	document.getElementById("date").innerHTML = "Date: " + ("0" + (date.getMonth()+1)).slice(-2)+"/"+("0" + (date.getDate())).slice(-2) + "/" +  date.getFullYear();
 	src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+("0" + (date.getDate())).slice(-2);
@@ -31,8 +37,7 @@ window.onload = function() {
 	keepPageRefreshed();
 }	
 var onRefreshClick = function() {
-	document.getElementById("refreshButton").setAttribute("doRefresh", false);
-	document.getElementById("alert").style.display= "none";
+	alertTimeoutS = 120;
 }
 var onComment = function() {
 	console.log(document.getElementById("comment").value);
