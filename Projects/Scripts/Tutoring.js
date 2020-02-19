@@ -4,35 +4,56 @@ var keepPageRefreshed = function(){
 	var counter = document.getElementById("counter");
 	setInterval(function() {
 		counter.innerHTML = ""+alertTimeoutS;
+		console.log(window.location.href.includes("name="));
+			console.log(window.location.href.split("name=")[1] == document.getElementById("tutorName").value.replace(" ", "%20"));
+			console.log(document.getElementById("tutorName").value.replace(" ", "%20"));
 		if (alertTimeoutS < 1) {
-			var inputButton = document.getElementById("refreshButton");
-			console.log(inputButton.getAttribute("doRefresh"));
-			if (inputButton.getAttribute("doRefresh") == "true") {
-				location.reload();	
+			
+			
+			if (window.location.href.includes("name=") &&  window.location.href.split("name=")[1] != document.getElementById("tutorName").value.replace(" ", "%20")){
+				window.location.href = window.location.href.replace("?name=" + window.location.href.split("name=")[1], "") + "?name=" + document.getElementById("tutorName").value.replace(" ", "%20");	
 			} else {
-				document.getElementById("refreshButton").setAttribute("doRefresh", true);
-				alertTimeoutS = 120;
+				console.log("here2");
+				location.reload();
 			}
-		} else if (alertTimeoutS == 30) {
+		} else if (alertTimeoutS < 30) {
 			alertBox.style.display= "flex";	
+		} else {
+			alertBox.style.display= "none";
 		}
 		alertTimeoutS -= 1;
 	}, 1000);
 }
 window.onload = function() {
+	let tutorName = window.location.href.split("name=")[1];
+	console.log(tutorName);
+	if (tutorName == undefined) {
+		window.location.href = window.location.href + "?name=Keegan%20Bruer";
+	}
+	document.getElementById("tutorName").value = tutorName.replace("%20", " ");
 	var form = document.getElementById("form");
 	var src = "https://docs.google.com/forms/d/e/1FAIpQLSdlhJApTDnMv8aPoglowX6_2vcl2GoNDiaUUpSCG6XlEHYE8A/viewform?embedded=true";
-	src += "&entry.372252838=Keegan%20Bruer";
+	src += "&entry.372252838=" + tutorName;
 	var date = new Date();
 	document.getElementById("date").innerHTML = "Date: " + ("0" + (date.getMonth()+1)).slice(-2)+"/"+("0" + (date.getDate())).slice(-2) + "/" +  date.getFullYear();
 	src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+("0" + (date.getDate())).slice(-2);
 	console.log(src)
 	form.src = src;
 	keepPageRefreshed();
+	
+	$("#tutorName").keyup(function(event) {
+    	if (event.keyCode === 13) {
+        	if (window.location.href.includes("name=") &&  window.location.href.split("name=")[1] != document.getElementById("tutorName").value.replace(" ", "%20")){
+				window.location.href = window.location.href.replace("?name=" + window.location.href.split("name=")[1], "") + "?name=" + document.getElementById("tutorName").value.replace(" ", "%20");	
+			} else {
+				console.log("here2");
+				location.reload();
+			}
+    	}
+	});
 }	
 var onRefreshClick = function() {
-	document.getElementById("refreshButton").setAttribute("doRefresh", false);
-	document.getElementById("alert").style.display= "none";
+	alertTimeoutS = 120;
 }
 var onComment = function() {
 	console.log(document.getElementById("comment").value);
