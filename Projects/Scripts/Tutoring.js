@@ -24,6 +24,7 @@ var keepPageRefreshed = function(){
 		alertTimeoutS -= 1;
 	}, 1000);
 }
+
 window.onload = function() {
 	let tutorName = window.location.href.split("name=")[1];
 	console.log(tutorName);
@@ -41,6 +42,10 @@ window.onload = function() {
 	form.src = src;
 	keepPageRefreshed();
 	
+	$(document).mousemove(function(event){
+		onRefreshClick();
+	});
+	
 	$("#tutorName").keyup(function(event) {
     	if (event.keyCode === 13) {
         	if (window.location.href.includes("name=") &&  window.location.href.split("name=")[1] != document.getElementById("tutorName").value.replace(" ", "%20")){
@@ -54,6 +59,7 @@ window.onload = function() {
 }	
 var onRefreshClick = function() {
 	alertTimeoutS = 120;
+	document.getElementById("alert").style.display = "none";
 }
 var onComment = function() {
 	console.log(document.getElementById("comment").value);
