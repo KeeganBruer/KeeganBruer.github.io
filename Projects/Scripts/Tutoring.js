@@ -26,8 +26,11 @@ var keepPageRefreshed = function(){
 }
 
 window.onload = function() {
-	let params = window.location.href.split("?")[1].split("&");
-	
+	let paramsLine = window.location.href.split("?")[1];
+	let params =[];
+	if (paramsLine) {
+	    params = paramsLine.split("&");
+	}
 	console.log(params);
 	let tutorName = undefined;
 	for (let param of params) {
