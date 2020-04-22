@@ -33,13 +33,17 @@ window.onload = function() {
 	}
 	console.log(params);
 	let tutorName = undefined;
+	let reloadCondition = undefined;
 	for (let param of params) {
 		if (param.includes("name")) {
 			tutorName = param.split("=")[1];	
 		}
+		if (param.includes("reload")) {
+			reloadCondition = param.split("=")[1];	
+		}
 	}
 	if (tutorName == undefined) {
-		window.location.href = window.location.href + "?name=Keegan%20Bruer";
+		window.location.href = window.location.href + "?name=Keegan%20Bruer" +paramsLine;
 	}
 	document.getElementById("tutorName").value = tutorName.replace("%20", " ");
 	var form = document.getElementById("form");
@@ -50,7 +54,9 @@ window.onload = function() {
 	src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+("0" + (date.getDate())).slice(-2);
 	console.log(src)
 	form.src = src;
-	keepPageRefreshed();
+	if (reloadCondition) {
+		keepPageRefreshed();
+	}
 	
 	$(document).mousemove(function(event){
 		onRefreshClick();
