@@ -26,8 +26,15 @@ var keepPageRefreshed = function(){
 }
 
 window.onload = function() {
-	let tutorName = window.location.href.split("name=")[1];
-	console.log(tutorName);
+	let params = window.location.href.split("?")[1].split("&");
+	
+	console.log(params);
+	let tutorName = undefined;
+	for (let param of params) {
+		if (param.includes("name")) {
+			tutorName = param.split("=")[1];	
+		}
+	}
 	if (tutorName == undefined) {
 		window.location.href = window.location.href + "?name=Keegan%20Bruer";
 	}
