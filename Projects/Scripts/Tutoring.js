@@ -54,7 +54,7 @@ window.onload = function() {
 	src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+("0" + (date.getDate())).slice(-2);
 	console.log(src)
 	form.src = src;
-	if (!reloadCondition.includes("false")) {
+	if (!reloadCondition || !reloadCondition.includes("false")) {
 		keepPageRefreshed();
 	}
 	
