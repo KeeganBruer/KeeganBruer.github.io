@@ -42,8 +42,10 @@ window.onload = function() {
 			reloadCondition = param.split("=")[1];	
 		}
 	}
-	if (tutorName == undefined) {
-		window.location.href = window.location.href + "?name=Keegan%20Bruer" +paramsLine;
+	if (params.length > 0 && tutorName == undefined) {
+		window.location.href = window.location.href + "&name=Keegan%20Bruer";
+	} else if (tutorName == undefined) {
+		window.location.href = window.location.href + "?name=Keegan%20Bruer";
 	}
 	document.getElementById("tutorName").value = tutorName.replace("%20", " ");
 	var form = document.getElementById("form");
