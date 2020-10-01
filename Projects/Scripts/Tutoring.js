@@ -52,7 +52,7 @@ window.onload = function() {
 	var src = "https://docs.google.com/forms/d/e/1FAIpQLSdlhJApTDnMv8aPoglowX6_2vcl2GoNDiaUUpSCG6XlEHYE8A/viewform?embedded=true";
 	src += "&entry.372252838=" + tutorName;
 	var date = new Date();
-	document.getElementById("date").innerHTML = "Date: " + ("0" + (date.getMonth()+1)).slice(-2)+"/"+("0" + (date.getDate())).slice(-2) + "/" +  date.getFullYear();
+	//document.getElementById("date").innerHTML = "Date: " + ("0" + (date.getMonth()+1)).slice(-2)+"/"+("0" + (date.getDate())).slice(-2) + "/" +  date.getFullYear();
 	src += "&entry.1280230343="+date.getFullYear()+"-"+ ("0" + (date.getMonth()+1)).slice(-2)+"-"+("0" + (date.getDate())).slice(-2);
 	console.log(src)
 	form.src = src;
