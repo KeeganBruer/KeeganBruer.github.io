@@ -47,7 +47,7 @@ window.onload = function() {
 	} else if (tutorName == undefined) {
 		window.location.href = window.location.href + "?name=Keegan%20Bruer";
 	}
-	document.getElementById("tutorName").value = tutorName.replace("%20", " ");
+	//document.getElementById("tutorName").value = tutorName.replace("%20", " ");
 	var form = document.getElementById("form");
 	var src = "https://docs.google.com/forms/d/e/1FAIpQLSdlhJApTDnMv8aPoglowX6_2vcl2GoNDiaUUpSCG6XlEHYE8A/viewform?embedded=true";
 	src += "&entry.372252838=" + tutorName;
